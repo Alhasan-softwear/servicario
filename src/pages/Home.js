@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import "./Home.css";
-
+import Counter from "../components/Counter";
 // function HomePage() {
 //   const [message, setMessage] = useState("supper message");
 //   const [count, setCount] = useState(0);
@@ -26,24 +26,11 @@ import "./Home.css";
 //     </div>
 //   );
 //}
-class HomePage extends React.Component {
+class HomePage extends Component {
   state = {
     message: "Super Message",
-    count: 0,
   };
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ message: "I am new message" });
-    }, 1000);
-  }
-  increment = () => {
-    const { count } = this.state;
-    this.setState({ count: count + 1 });
-  };
-  decrement = () => {
-    const { count } = this.state;
-    this.setState({ count: count - 1 });
-  };
+
   render() {
     const { message } = this.state;
     return (
@@ -53,9 +40,7 @@ class HomePage extends React.Component {
         <div className="container">
           <h1>hey</h1>
           <p>{message}</p>
-          <button onClick={this.increment}>Increment</button>
-          <div className="counter">{this.state.count}</div>
-          <button onClick={this.decrement}>Decrement</button>
+          <Counter />
         </div>
       </div>
     );
