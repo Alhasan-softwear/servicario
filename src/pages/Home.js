@@ -40,7 +40,7 @@ class HomePage extends Component {
         <div className="container">
           <h1>hey</h1>
           <p>{message}</p>
-          <Counter />
+          <Counter title="hey guys it is austine" />
         </div>
       </div>
     );

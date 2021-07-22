@@ -13,8 +13,10 @@ export class Counter extends Component {
     this.setState({ count: count - 1 });
   };
   render() {
+    const { title } = this.props;
     return (
       <div>
+        <h1>{title}</h1>
         <button onClick={this.increment}>Increment</button>
         <div className="counter">{this.state.count}</div>
         <button onClick={this.decrement}>Decrement</button>
